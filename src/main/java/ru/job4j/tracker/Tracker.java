@@ -56,9 +56,9 @@ public class Tracker {
         int index = indexOf(id);
         if (index != -1) {
             item.setId(id);
-           this.items[index] = item;
-          rsl = true;
-      }
+            this.items[index] = item;
+            rsl = true;
+        }
         return rsl;
     }
 
@@ -72,8 +72,19 @@ public class Tracker {
         }
         return rsl;
     }
-}
 
+    public boolean delete(int id) {
+        boolean result = false;
+        int indexMinus = indexOf(id);
+        if (indexMinus > -1) {
+           // System.arraycopy(source, startPos, dist, distPos, length);//
+            System.arraycopy(items, indexMinus + 1, items, indexMinus, size - indexMinus);
+            size--;
+            result = true;
+        }
+        return result;
+    }
+}
 
 
 
