@@ -38,17 +38,18 @@ public class Tracker {
         return rsl;
     }
 
-    public Item findByName(String key) {
-        Item rsl = null;
+    public Item[] findByName(String key) {
+       // Item rsl = null;
         int size = 0;
-        for (int index = 0; index < items.length; index++) {
+        Item[] rsl = new Item[size];
+        for (int index = 0; index < size; index++) {
             Item id = items[index];
             if (id.equals(key)) {
-                rsl = id;
+                rsl[size] = id;
                 size++;
             }
         }
-        return rsl;
+        return Arrays.copyOf(rsl, size);
     }
 
     public boolean replace(int id, Item item) {
@@ -80,7 +81,6 @@ public class Tracker {
         boolean result = false;
         int indexMinus = indexOf(id);
         if (indexMinus == -1) {
-            return false;
         }
         if (indexMinus > -1) {
            // System.arraycopy(source, startPos, dist, distPos, length);//
