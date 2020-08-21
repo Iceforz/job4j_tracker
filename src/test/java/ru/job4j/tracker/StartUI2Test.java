@@ -15,7 +15,6 @@ public class StartUI2Test {
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
     }
-}
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
@@ -41,7 +40,7 @@ public class StartUI2Test {
                 item.getId(),
         };
         StartUI.deleteItem(new StubInput(answers), tracker);
-        assertNull(tracker.findById(answers[0]));
+        assertNull(tracker.findById(), is(0));
     }
 
 }
