@@ -26,9 +26,7 @@ public class StartUI2 {
                 System.out.println("=== Show all items ===");
                 Item[] items = tracker.findAll();
                 for (Item item : items) {
-                    if (item != null) {
                         System.out.println(" ID заявки: " + item.getId() + "Имя заявки: " + item.getName());
-                    }
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ===");
@@ -61,11 +59,10 @@ public class StartUI2 {
                 //int byid = input.askInt("4");
                 Item item = tracker.findById(byid);
                 if (item != null) {
+                    System.out.println(" ID заявки: " + item.getId() + " Имя заявки: " + item.getName());
+                } else {
+                    System.out.println("There is no such item !");
                 }
-                System.out.println(" ID заявки: " + item.getId() + " Имя заявки: " + item.getName());
-                if (item == null) {
-                }
-                System.out.println("There is no such item !");
             } else if (select == 5) {
                 System.out.println("=== Find items by name ===");
                 String name = scanner.nextLine();

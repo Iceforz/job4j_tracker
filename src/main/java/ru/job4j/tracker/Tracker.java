@@ -29,13 +29,10 @@ public class Tracker {
         int size = 0;
         for (int index = 0; index < items.length; index++) {
             Item id = items[index];
-            if (id != null) {
                 itemswithoutnull[size] = id;
                 size++;
             }
-        }
-        Item[] rsl = Arrays.copyOf(itemswithoutnull, size);
-        return rsl;
+    return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
