@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class FindAction implements UserAction {
+    private final Output out;
+
+    public FindAction(Output out) {
+    this.out = out;
+
+}
     @Override
     public String name() {
         return "=== All Items ===";
@@ -11,10 +17,10 @@ public class FindAction implements UserAction {
         Item[] tr = tracker.findAll();
         if (tr.length != 0) {
             for (int i = 0; i < tr.length; i++) {
-                System.out.println("[" + tr[i].getId() + "]:" + tr[i].getName());
+                out.println("[" + tr[i].getId() + "]:" + tr[i].getName());
             }
         } else {
-            System.out.println("Empty");
+            out.println("Empty");
         }
         return true;
     }
