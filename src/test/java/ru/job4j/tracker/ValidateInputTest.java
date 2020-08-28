@@ -23,7 +23,8 @@ public class ValidateInputTest {
                 new String[] {"3"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(3));
+        input.askInt("Enter menu:");
+        String x = "Please enter validate data again.";
+        assertThat(out.toString(), is(x));
     }
 }
