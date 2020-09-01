@@ -18,7 +18,7 @@ public class SortItemTest {
         Item second = new Item(1, "Second");
         Item third = new Item(5, "Third");
         List<Item> items = Arrays.asList(second, first, third);
-        assertThat(srt.sortUpName(items), is((Arrays.asList(first, second, third))));
+        assertThat(srt.sortUp(items), is((Arrays.asList(first, second, third))));
     }
 
     @Test
