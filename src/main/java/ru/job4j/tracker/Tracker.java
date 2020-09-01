@@ -68,12 +68,8 @@ public class Tracker {
     public boolean delete(int id) {
         boolean result = false;
         int indexMinus = indexOf(id);
-        if (indexMinus == -1) {
-        }
-        if (indexMinus > -1) {
-           // System.arraycopy(source, startPos, dist, distPos, length);//
-            System.arraycopy(items, indexMinus + 1, items, indexMinus, size - indexMinus);
-            size--;
+        if (indexMinus != -1 && indexMinus < items.size()) {
+            items.remove(items.get(indexMinus));
             result = true;
         }
         return result;
