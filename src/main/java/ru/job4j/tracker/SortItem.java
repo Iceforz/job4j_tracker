@@ -14,4 +14,9 @@ public class SortItem {
         items = items;
         return items;
     }
+    public static List<Item> sortbyNameDown(List<Item> items) {
+        items.sort((new SortItemByNameDown()));
+        items = items;
+        return items;
+    }
 }
