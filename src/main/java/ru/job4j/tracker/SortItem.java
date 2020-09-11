@@ -6,17 +6,16 @@ public class SortItem {
     
     public static List<Item> sortUp(List<Item> items) {
         items.sort(new SortItembyName());
-        items = items;
         return items;
 }
+
     public static List<Item> sortDown(List<Item> items) {
         items.sort(Collections.reverseOrder());
-        items = items;
         return items;
     }
+
     public static List<Item> sortbyNameDown(List<Item> items) {
         items.sort((new SortItemByNameDown()));
-        items = items;
         return items;
     }
 }

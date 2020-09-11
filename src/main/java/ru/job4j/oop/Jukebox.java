@@ -1,8 +1,7 @@
 package ru.job4j.oop;
 
-
-
 public class Jukebox {
+
     public void music(int position) {
         String song = null;
         if (position == 1) {

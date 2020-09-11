@@ -26,6 +26,7 @@ public class SortItemTest {
         List<Item> items = Arrays.asList(second, third, first);
         assertThat(srt.sortDown(items), is((Arrays.asList(third, second, first))));
     }
+
     @Test
     public void sortbyNameDown() {
         SortItem srt = new SortItem();

@@ -11,7 +11,7 @@ public class UniqueText {
             check.add(key);
         }
         for (String key: text) {
-            if (check.contains(key) == false) {
+            if (!check.contains(key)) {
                 rsl = false;
                 break;
             }

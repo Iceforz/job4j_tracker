@@ -6,8 +6,7 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-
-public class OrderConvertTest {
+ public class OrderConvertTest {
     @Test
     public void whenSingleOrder() {
         List<Order> orders = new ArrayList<>();

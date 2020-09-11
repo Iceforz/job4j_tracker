@@ -1,6 +1,6 @@
 package stragery;
 
-public class Square implements Shape{
+public class Square implements Shape {
     @Override
     public String draw() {
         String ln = System.lineSeparator();

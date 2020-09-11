@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class ValidateInput {
+public class ValidateInput implements Input {
     private final Output out;
     private final Input in;
 
@@ -9,10 +9,12 @@ public class ValidateInput {
         this.in = input;
     }
 
+    @Override
     public String askStr(String question) {
         return in.askStr(question);
     }
 
+    @Override
     public int askInt(String question) {
         boolean invalid = true;
         int value = -1;

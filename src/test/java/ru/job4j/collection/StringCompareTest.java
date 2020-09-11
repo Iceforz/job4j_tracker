@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 
 public class StringCompareTest {
     @Test
-    public void whenStringsAreEqualThenZero () {
+    public void whenStringsAreEqualThenZero() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -19,7 +19,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftLessThanRightResultShouldBeNegative () {
+    public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -29,7 +29,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftGreaterThanRightResultShouldBePositive () {
+    public void whenLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
@@ -39,7 +39,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftGreaterThanRightShouldBePositive(){
+    public void secondCharOfLeftGreaterThanRightShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
@@ -49,7 +49,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftLessThanRightShouldBeNegative(){
+    public void secondCharOfLeftLessThanRightShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Patrova",
@@ -57,8 +57,9 @@ public class StringCompareTest {
         );
         assertThat(rst, lessThan(0));
     }
+
     @Test
-    public void EmptyStringsThenZero(){
+    public void emptyStringsThenZero() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "",
@@ -68,7 +69,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void oneEmptyString(){
+    public void oneEmptyString() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -78,7 +79,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void oneEmptyStringC(){
+    public void oneEmptyStringC() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "",

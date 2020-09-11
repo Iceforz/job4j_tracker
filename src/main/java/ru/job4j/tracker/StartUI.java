@@ -1,7 +1,10 @@
 package ru.job4j.tracker;
 
+import javax.print.DocFlavor;
+import java.util.List;
+
 public class StartUI {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Item item = new Item();
         tracker.add(item);
@@ -17,15 +20,10 @@ public class StartUI {
     }
 
     public static void findAll(Input input, Tracker tracker) {
-       Item[] tr = tracker.findAll();
-        if (tr.length != 0) {
-            for (int i = 0; i < tr.length; i++) {
-                System.out.println("[" + tr[i].getId() + "]:" + tr[i].getName());
-            }
-        } else {
-            System.out.println("Empty");
+        List<Item> tr = tracker.findAll();
+        for (Item item : tr) {
+            System.out.println("[" + item.getId() + "]:" + item.getName());
         }
-    }
 
     public static void replaceItem(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");
@@ -63,10 +61,13 @@ public class StartUI {
 
     public static void findByName(Input input, Tracker tracker) {
         String name = input.askStr("Enter name: ");
-        Item[] trn = tracker.findByName(name);
-        for (Item req : trn) {
+        Item[] tr = tracker.findByName(name);
+        for (Item req : tr) {
             System.out.println(req.getName());
         }
     }
+
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    }*/
 }
 

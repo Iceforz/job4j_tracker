@@ -8,7 +8,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import junit.framework.TestCase;
-@Ignore
+
 public class ConvertList2ArrayTest {
     @Test
     public void when7ElementsThen9() {

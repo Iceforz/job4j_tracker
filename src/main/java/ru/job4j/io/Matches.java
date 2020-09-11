@@ -9,15 +9,14 @@ public class Matches {
         System.out.println("Всего " + sticks);
         while (game) {
             System.out.println("1ый игрок");
-            int player1 = Integer.valueOf(scanner.nextLine());
+            int player1 = 2;
             sticks -= player1;
             if (sticks == 0) {
                 System.out.println("1ый победил");
-                break;
             }
             System.out.println("2ой игрок");
             int player2 = Integer.valueOf(scanner.nextLine());
-            sticks -= player1;
+            sticks -= player2;
             if (sticks <= 0) {
                 System.out.println("2ой победил");
                 break;

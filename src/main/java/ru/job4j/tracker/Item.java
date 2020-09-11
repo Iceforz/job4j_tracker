@@ -1,4 +1,9 @@
 package ru.job4j.tracker;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
 //
 public class Item implements Comparable<Item> {
     private int id;
@@ -28,13 +33,14 @@ public class Item implements Comparable<Item> {
     public void setName(String name) {
         this.name = name;
     }
+
     @Override
     public String toString() {
         return String.format("id: %s, name: %s", id, name);
     }
 
     @Override
-    public int compareTo(Item item) {
-        return Integer.compare(id, item.id);
+   public int compareTo(Item item) {
+       return Integer.compare(id, item.id);
     }
 }

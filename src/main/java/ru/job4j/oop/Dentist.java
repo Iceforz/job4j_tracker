@@ -1,7 +1,8 @@
 package ru.job4j.oop;
 
-    public class Dentist extends Doctor{
+    public class Dentist extends Doctor {
         private String name;
-        public void heal(Tooth tooth){
+
+        public void heal(Tooth tooth) {
     }
 }

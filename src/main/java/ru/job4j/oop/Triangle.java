@@ -13,17 +13,19 @@ public class Triangle {
     }
 
     public double period(double a, double b, double c) {
-        return (a + b +c) / 2;
+        return (a + b + c) / 2;
     }
 
-
+    @SuppressWarnings({"checkstyle:SimplifyBooleanReturn", "checkstyle:EmptyBlock"})
     public boolean exist(double ab, double ac, double bc) {
-        if (ab + bc > ac && ab + ac > bc && bc + ac > ab && ab !=0 && ac != 0 && bc !=0) {
-            return true;
+        boolean rsl = true;
+        if (ab + bc > ac && ab + ac > bc && bc + ac > ab && ab != 0
+                && ac != 0 && bc != 0) {
+            return rsl;
+        } else {
+            rsl = false;
         }
-        else {
-            return false;
-        }
+        return rsl;
     }
 
     public double area() {

@@ -1,7 +1,6 @@
 package ru.job4j.pojo;
 
-
-public class Student {
+ public class Student {
     private String name;
     private String surname;
     private String patronymic;
