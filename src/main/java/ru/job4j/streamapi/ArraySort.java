@@ -1,4 +1,4 @@
-package ru.job4j.streamAPI;
+package ru.job4j.streamapi;
 
 import java.util.ArrayList;
 import java.util.List;
