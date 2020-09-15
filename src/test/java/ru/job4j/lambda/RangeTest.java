@@ -16,14 +16,14 @@ public class RangeTest {
     }
 
     @Test
-    public void whenQuadraticFunction() {
-        List<Double> result = Range.myrange(5, 8, x -> 2 * (x * x) + 2 * x + 1);
-        List<Double> expected = Arrays.asList(61D, 85D, 113D);
+    public void whenQuad() {
+        List<Double> result = Range.myrange(5, 8, x -> 2 * (x * x) + 1);
+        List<Double> expected = Arrays.asList(51D, 73D, 99D);
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenExponentialFunction() {
+    public void whenDegree() {
         List<Double> result = Range.myrange(5, 8, x -> Math.pow(2, x));
         List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
