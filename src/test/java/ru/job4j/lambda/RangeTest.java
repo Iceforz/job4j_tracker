@@ -7,7 +7,6 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class RangeTest {
-
     @Test
     public void whenLinearFunctionThenLinearResults() {
         List<Double> result = Range.myrange(5, 8, x -> 2 * x + 1);
