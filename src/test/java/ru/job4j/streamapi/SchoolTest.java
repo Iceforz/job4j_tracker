@@ -23,6 +23,7 @@ public class SchoolTest {
                 new Student("st", 11),
                 new Student("st", 0)
         );
+
         List<Student> rsl = School.collect(
                 students, student -> student.getScore() >= 70 && student.getScore() <= 100);
         List<Student> expected = students.stream().filter(student -> student.getScore() >= 70

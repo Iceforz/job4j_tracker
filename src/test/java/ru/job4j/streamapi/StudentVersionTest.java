@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
-public class Studentv2Test {
+public class StudentVersionTest {
 
     @Test
     public void whenConvert() {
@@ -25,7 +25,7 @@ public class Studentv2Test {
         students.add(new Student("st", 11));
         students.add(new Student("st", 0));
 
-        Map<Integer, Student> map = new HashMap<Integer, Student>();
+        Map<Integer, Student> map = new HashMap<>();
         map.put(99, new Student("st", 99));
         map.put(88, new Student("st", 88));
         map.put(77, new Student("st", 77));
@@ -37,7 +37,6 @@ public class Studentv2Test {
         map.put(11, new Student("st", 11));
         map.put(0, new Student("st", 0));
 
-
-        assertEquals(Studentv2.listToMap(students), map);
+        assertEquals(StudentVersion.listToMap(students), map);
     }
 }
