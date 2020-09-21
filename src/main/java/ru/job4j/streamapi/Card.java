@@ -1,7 +1,5 @@
 package ru.job4j.streamapi;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,8 +21,8 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        List<Card> deck = new ArrayList<>();
-        List<Suit> suit = Stream.of(Suit.values()).collect(Collectors.toList());
-        List<Value> value = Stream.of(Value.values()).collect(Collectors.toList());
+        Stream.of(Suit.values()).map(suit -> Stream.of(Value.values()).
+                map(value -> new Card(suit, value)).collect(Collectors.toList()))
+                .forEach(System.out::println);
     }
 }
