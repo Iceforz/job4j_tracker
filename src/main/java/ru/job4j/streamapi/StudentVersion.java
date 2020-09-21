@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StudentVersion {
-    public static Map<Integer, Student> listToMap(List<Student> students) {
-        return students.stream().distinct().collect(Collectors.toMap(
-                Student::getScore, item -> item));
+    public static Map<String, Student> listToMap(List<Student> students) {
+        return students.stream().collect(Collectors.toMap(Student::getSurname, item -> item,
+                (surname1, surname2) -> surname1));
     }
 }
