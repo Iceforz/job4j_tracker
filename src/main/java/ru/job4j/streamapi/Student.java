@@ -1,9 +1,8 @@
 package ru.job4j.streamapi;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private int score;
     private String surname;
 
@@ -42,23 +41,7 @@ public class Student {
         return Objects.hash(score, surname);
     }
 
-    public static void main(String[] args) {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("st", 99));
-        students.add(new Student("st", 88));
-        students.add(new Student("st", 77));
-        students.add(new Student("st", 66));
-        students.add(new Student("st", 55));
-        students.add(new Student("st", 44));
-        students.add(new Student("st", 33));
-        students.add(new Student("st", 22));
-        students.add(new Student("st", 11));
-        students.add(new Student("st", 0));
-
-        students.forEach(item -> System.out.println(item));
-
-        Map<Integer, Student> map = new HashMap<>();
-        map = students.stream().collect(Collectors.toMap(item -> item.getScore(), item -> item));
-        map.forEach((k, v) -> System.out.println(k + " = " + v));
+    public int compareTo(Student s) {
+        return score - s.score;
     }
 }
