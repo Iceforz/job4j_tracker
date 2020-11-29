@@ -36,7 +36,8 @@ public class Analyze {
         return stream.flatMap(pupil -> pupil.getSubjects().stream())
                 .collect(Collectors.groupingBy(Subject::getName, Collectors
                         .summingDouble(Subject::getScore)))
-                .entrySet().stream().map(item -> new Tuple(item.getKey(), item.getValue()))
+                .entrySet()
+                .stream().map(item -> new Tuple(item.getKey(), item.getValue()))
                 .max(Comparator.comparing(Tuple::getScore)).get();
     }
 }

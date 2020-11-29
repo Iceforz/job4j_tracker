@@ -1,0 +1,1 @@
+insert into items(name) values ('itemX'), ('itemY'), ('itemZ');
