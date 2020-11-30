@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import ru.job4j.db.Store;
+
 public class ExitAction implements UserAction {
     private final Output out;
 
@@ -13,7 +15,7 @@ public class ExitAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store store) {
         return false;
     }
 }

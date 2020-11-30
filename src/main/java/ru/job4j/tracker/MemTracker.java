@@ -1,9 +1,11 @@
 package ru.job4j.tracker;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-public class Tracker {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class MemTracker {
+
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
     private int size = 0;
@@ -12,6 +14,10 @@ public class Tracker {
         item.setId(ids++);
         items.set(size++, item);
         return item;
+    }
+
+    private String generateId() {
+        return String.valueOf(new Random().nextLong() + System.currentTimeMillis());
     }
 
     public Item findById(int id) {
@@ -41,7 +47,7 @@ public class Tracker {
         }
 
     public boolean replace(int id, Item item) {
-        boolean rsl = false;
+        boolean rsl = true;
         int index = indexOf(id);
         if (index == -1) {
             return false;
@@ -49,7 +55,7 @@ public class Tracker {
         if (index != -1) {
             item.setId(id);
             this.items.set(index, item);
-            rsl = true;
+            return true;
         }
         return rsl;
     }
