@@ -8,10 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class SqlTracker implements Store {
+public class SqlTracker implements Store, AutoCloseable {
     private Connection cn;
 
-    @Override
+    public SqlTracker() {
+    }
+
+    public SqlTracker(Connection cn) {
+        this.cn = cn;
+    }
+
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader().
                 getResourceAsStream("app.properties")) {
@@ -49,7 +55,9 @@ public class SqlTracker implements Store {
             }
         } catch (SQLException exc) {
             exc.printStackTrace();
-        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
         return item;
     }
 
@@ -65,6 +73,8 @@ public class SqlTracker implements Store {
             success = affectedRows > 0;
         } catch (SQLException exc) {
             exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return success;
     }
@@ -80,6 +90,8 @@ public class SqlTracker implements Store {
             success = affectedRows > 0;
         } catch (SQLException exc) {
             exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return success;
     }
@@ -99,6 +111,8 @@ public class SqlTracker implements Store {
             }
         } catch (SQLException exc) {
             exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }
@@ -119,6 +133,8 @@ public class SqlTracker implements Store {
             }
         } catch (SQLException exc) {
             exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }
@@ -137,6 +153,8 @@ public class SqlTracker implements Store {
             }
         } catch (SQLException exc) {
             exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }
